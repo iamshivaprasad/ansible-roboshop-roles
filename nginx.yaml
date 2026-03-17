@@ -1,0 +1,8 @@
+- name: intall nginx
+  host: dynamic_frontend
+  become: yes
+  tasks:
+  - name: install nginx if redhat
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
